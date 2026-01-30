@@ -38,7 +38,7 @@ pipeline {
          stage('Push Docker Image to DockerHub') {
             steps {
                echo "Push Docker Image to DockerHub for mvn project"
-                 withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'DOCKER_PASS')]) {
+                 withCredentials([string(credentialsId: 'dockerhubpwd1', variable: 'DOCKER_PASS')]) {
                          bat '''
    	        echo %DOCKER_PASS% | docker login -u pratheepp3 --password-stdin
                          docker tag mvnproj:1.0 pratheepp3/mymvnproj:latest
