@@ -40,7 +40,7 @@ pipeline {
                 echo "Push Docker Image to DockerHub for mvn project"
                 // Hardcode DockerHub credentials directly in the script
                 bat '''
-                    docker login -u pratheepp3 -p DockerPass@101
+                    docker login -u pratheepp3 -p DockerPassword
                     docker tag mvnproj:1.0 pratheepp3/mymvnproj:latest
                     docker push pratheepp3/mymvnproj:latest
                 '''
