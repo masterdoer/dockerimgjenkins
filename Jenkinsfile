@@ -12,8 +12,8 @@ pipeline {
             steps {
                 echo "Pulling from GITHUB repository"
                 git branch: 'main',
-                    credentialsId: 'mygithubcred',
-                    url: 'https://github.com/pk0240/mvnproj2.git'
+                    credentialsId: 'mygitacc',
+                    url: 'https://github.com/masterdoer/dockerimgjenkins.git'
             }
         }
 
