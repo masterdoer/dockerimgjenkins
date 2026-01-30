@@ -46,6 +46,7 @@ pipeline {
                 echo "Push Docker Image to DockerHub for mvn project"
                 withCredentials([usernamePassword(credentialsId: 'dpass', passwordVariable: 'pass', usernameVariable: 'usrname')]) {
                     bat '''
+                        docker logout
                         echo %pass% | docker login -u %usrname% --password-stdin
                         docker tag mvnproj:1.0 %usrname%/mymvnproj:latest
                         docker push %usrname%/mymvnproj:latest
